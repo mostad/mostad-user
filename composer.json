@@ -8,7 +8,9 @@
     }
   ],
   "require": {
-    "php": ">=5.5"
+    "php":                          ">=5.5",
+    "doctrine/doctrine-orm-module": "~0.8",
+    "zfr/zfr-oauth2-server-module": "~0.6"
   },
   "autoload": {
     "psr-0": {
