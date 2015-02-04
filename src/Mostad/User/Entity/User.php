@@ -47,7 +47,7 @@ class User implements UserInterface, TokenOwnerInterface
     }
 
     /**
-     * @param string $email
+     * {@inheritDoc}
      */
     public function setEmail($email)
     {

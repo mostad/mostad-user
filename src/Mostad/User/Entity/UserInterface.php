@@ -17,4 +17,9 @@ interface UserInterface
      * @return string
      */
     public function getEmail();
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email);
 }
