@@ -2,7 +2,6 @@
 namespace Mostad\User\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use ZfrOAuth2\Server\Entity\TokenOwnerInterface;
 
 /**
  * Class User
@@ -12,7 +11,7 @@ use ZfrOAuth2\Server\Entity\TokenOwnerInterface;
  * @ORM\Entity
  * @ORM\Table(name="user")
  */
-class User implements UserInterface, TokenOwnerInterface
+class User implements UserInterface
 {
     /**
      * @var int
@@ -52,13 +51,5 @@ class User implements UserInterface, TokenOwnerInterface
     public function setEmail($email)
     {
         $this->email = $email;
-    }
-
-    /**
-     * @return int
-     */
-    public function getTokenOwnerId()
-    {
-        return $this->getId();
     }
 }
