@@ -7,9 +7,6 @@ use Doctrine\ORM\Mapping as ORM;
  * Class User
  *
  * @package Mostad\User\Entity
- *
- * @ORM\Entity
- * @ORM\Table(name="user")
  */
 class User implements UserInterface
 {
