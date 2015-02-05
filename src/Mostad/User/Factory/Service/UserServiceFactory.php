@@ -1,7 +1,7 @@
 <?php
 namespace Mostad\User\Factory\Service;
 
-use Mostad\Service\UserService;
+use Mostad\User\Service\UserService;
 use Zend\ServiceManager\FactoryInterface;
 use Zend\ServiceManager\ServiceLocatorInterface;
 

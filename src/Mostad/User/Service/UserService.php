@@ -1,9 +1,8 @@
 <?php
-namespace Mostad\Service;
+namespace Mostad\User\Service;
 
 use Doctrine\Common\Persistence\ObjectManager;
 use Mostad\User\Entity\UserInterface;
-use Mostad\User\Service\UserServiceInterface;
 
 /**
  * Class UserService
