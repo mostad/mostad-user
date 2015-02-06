@@ -10,6 +10,7 @@
   "require": {
     "php":                               ">=5.5",
     "doctrine/common":                   "~2.4",
+    "mostad/mostad-common":              "dev-master",
     "zendframework/zend-filter":         "~2.3",
     "zendframework/zend-inputfilter":    "~2.3",
     "zendframework/zend-mvc":            "~2.3",
