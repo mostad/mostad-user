@@ -8,5 +8,5 @@ namespace Mostad\User\InputFilter;
  */
 interface UserInputFilterInterface
 {
-
+    // Empty for now, only used for ::class in InputFilterManager
 }
