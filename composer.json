@@ -8,8 +8,15 @@
     }
   ],
   "require": {
-    "php":             ">=5.5",
-    "doctrine/common": "~2.4"
+    "php":                               ">=5.5",
+    "doctrine/common":                   "~2.4",
+    "zendframework/zend-filter":         "~2.3",
+    "zendframework/zend-inputfilter":    "~2.3",
+    "zendframework/zend-mvc":            "~2.3",
+    "zendframework/zend-servicemanager": "~2.3",
+    "zendframework/zend-stdlib":         "~2.3",
+    "zendframework/zend-validator":      "~2.3",
+    "zfr/zfr-rest":                      "~0.4"
   },
   "autoload": {
     "psr-0": {
