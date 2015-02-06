@@ -41,8 +41,7 @@ class UserListController extends AbstractRestfulController
     public function post()
     {
         /** @var \Mostad\User\Entity\UserInterface $user */
-        // TODO: Make validation group customizable
-        $data = $this->validateIncomingData(UserInputFilterInterface::class, ['email']);
+        $data = $this->validateIncomingData(UserInputFilterInterface::class);
         $user = $this->hydrateObject(ClassMethods::class, clone $this->userPrototype, $data);
 
         $user = $this->userService->create($user);
