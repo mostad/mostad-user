@@ -5,8 +5,8 @@ use Mostad\User\Controller\UserListController;
 use Mostad\User\Entity\AbstractUser;
 use Mostad\User\Entity\UserInterface;
 use Mostad\User\Factory\Controller\UserListControllerFactory;
+use Mostad\User\Factory\InputFilter\UserInputFilterFactory;
 use Mostad\User\Factory\Service\UserServiceFactory;
-use Mostad\User\InputFilter\UserInputFilter;
 use Mostad\User\InputFilter\UserInputFilterInterface;
 use Mostad\User\Service\UserServiceInterface;
 use Zend\Mvc\Router\Http\Literal;
@@ -19,8 +19,8 @@ return [
     ],
 
     'input_filters' => [
-        'invokables' => [
-            UserInputFilterInterface::class => UserInputFilter::class,
+        'factories' => [
+            UserInputFilterInterface::class => UserInputFilterFactory::class,
         ],
     ],
 
