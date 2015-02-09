@@ -9,7 +9,7 @@
   ],
   "require": {
     "php":                               ">=5.5",
-    "doctrine/common":                   "~2.4",
+    "doctrine/common":                   ">=2.5-dev,<2.6-dev",
     "doctrine/doctrine-module":          "0.9.x-dev@dev",
     "zendframework/zend-filter":         "~2.3",
     "zendframework/zend-inputfilter":    "~2.3",
