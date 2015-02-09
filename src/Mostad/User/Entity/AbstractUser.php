@@ -2,11 +2,11 @@
 namespace Mostad\User\Entity;
 
 /**
- * Class User
+ * Class AbstractUser
  *
  * @package Mostad\User\Entity
  */
-class User implements UserInterface
+class AbstractUser implements UserInterface
 {
     /**
      * @var int

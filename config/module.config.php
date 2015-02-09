@@ -2,7 +2,7 @@
 namespace Mostad\User;
 
 use Mostad\User\Controller\UserListController;
-use Mostad\User\Entity\User;
+use Mostad\User\Entity\AbstractUser;
 use Mostad\User\Entity\UserInterface;
 use Mostad\User\Factory\Controller\UserListControllerFactory;
 use Mostad\User\Factory\Service\UserServiceFactory;
@@ -43,7 +43,7 @@ return [
             UserServiceInterface::class => UserServiceFactory::class,
         ],
         'invokables' => [
-            UserInterface::class => User::class,
+            UserInterface::class => AbstractUser::class,
         ],
         'shared' => [
             UserInterface::class => false,
