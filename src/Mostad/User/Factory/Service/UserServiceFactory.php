@@ -13,17 +13,15 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class UserServiceFactory implements FactoryInterface
 {
     /**
-     * @param ServiceLocatorInterface $serviceManager
-     *
-     * @return UserService
+     * {@inheritdoc}
      */
-    public function createService(ServiceLocatorInterface $serviceManager)
+    public function createService(ServiceLocatorInterface $serviceLocator)
     {
         /**
          * @var \Doctrine\Common\Persistence\ObjectManager $objectManager
-         * @var \Zend\ServiceManager\ServiceManager        $serviceManager
+         * @var \Zend\ServiceManager\ServiceManager        $serviceLocator
          */
-        $objectManager = $serviceManager->get('Mostad\ObjectManager');
+        $objectManager = $serviceLocator->get('Mostad\ObjectManager');
 
         return new UserService($objectManager);
 }}

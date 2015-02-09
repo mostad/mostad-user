@@ -15,9 +15,7 @@ use Zend\ServiceManager\ServiceLocatorInterface;
 class UserListControllerFactory implements FactoryInterface
 {
     /**
-     * @param ServiceLocatorInterface $serviceLocator
-     *
-     * @return UserListController
+     * {@inheritdoc}
      */
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
