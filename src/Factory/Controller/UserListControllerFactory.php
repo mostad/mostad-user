@@ -20,12 +20,17 @@ class UserListControllerFactory implements FactoryInterface
     public function createService(ServiceLocatorInterface $serviceLocator)
     {
         /**
-         * @var UserInterface                          $userPrototype
-         * @var UserServiceInterface                   $userService
-         * @var \Zend\Mvc\Controller\ControllerManager $serviceLocator
+         * @var UserInterface                                 $userPrototype
+         * @var UserServiceInterface                          $userService
+         * @var \Doctrine\Common\Persistence\ObjectRepository $userRepository
+         * @var \Zend\Mvc\Controller\ControllerManager        $serviceLocator
+         * @var \Zend\ServiceManager\ServiceManager           $serviceManager
          */
-        $userPrototype = $serviceLocator->getServiceLocator()->get(UserInterface::class);
-        $userService   = $serviceLocator->getServiceLocator()->get(UserServiceInterface::class);
+        $serviceManager = $serviceLocator->getServiceLocator();
+        $userPrototype  = $serviceManager->get(UserInterface::class);
+        $userRepository = $serviceManager->get('Mostad\ObjectManager')->getRepository(UserInterface::class);
+        $userService    = $serviceManager->get(UserServiceInterface::class);
 
-        return new UserListController($userPrototype, $userService);
-}}
+        return new UserListController($userPrototype, $userRepository, $userService);
+    }
+}

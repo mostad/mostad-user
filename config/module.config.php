@@ -12,24 +12,24 @@ use Mostad\User\Service\UserServiceInterface;
 use Zend\Mvc\Router\Http\Literal;
 
 return [
-    'controllers' => [
+    'controllers'     => [
         'factories' => [
             UserListController::class => UserListControllerFactory::class,
         ],
     ],
 
-    'input_filters' => [
+    'input_filters'   => [
         'factories' => [
             UserInputFilterInterface::class => UserInputFilterFactory::class,
         ],
     ],
 
-    'router' => [
+    'router'          => [
         'routes' => [
             'users' => [
-                'type' => Literal::class,
+                'type'    => Literal::class,
                 'options' => [
-                    'route' => '/users',
+                    'route'    => '/users',
                     'defaults' => [
                         'controller' => UserListController::class,
                     ],
@@ -39,20 +39,21 @@ return [
     ],
 
     'service_manager' => [
-        'factories' => [
+        'factories'  => [
             UserServiceInterface::class => UserServiceFactory::class,
         ],
         'invokables' => [
             UserInterface::class => AbstractUser::class,
         ],
-        'shared' => [
+        'shared'     => [
             UserInterface::class => false,
         ],
     ],
 
-    'view_manager' => [
+    'view_manager'    => [
         'template_map' => [
-            'default/mostad/user.php' => __DIR__ .'/../view/default/mostad/user.php',
+            'default/mostad/user.php'      => __DIR__ . '/../view/default/mostad/user.php',
+            'default/mostad/user-list.php' => __DIR__ . '/../view/default/mostad/user-list.php',
         ],
     ],
 ];
