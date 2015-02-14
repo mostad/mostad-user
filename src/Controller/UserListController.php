@@ -2,7 +2,6 @@
 namespace Mostad\User\Controller;
 
 use Doctrine\Common\Collections\Selectable;
-use Doctrine\Common\Persistence\ObjectRepository;
 use DoctrineModule\Paginator\Adapter\Selectable as SelectableAdapter;
 use Mostad\User\Entity\UserInterface;
 use Mostad\User\InputFilter\UserInputFilterInterface;
@@ -25,9 +24,9 @@ class UserListController extends AbstractRestfulController
     protected $userPrototype;
 
     /**
-     * @var ObjectRepository
+     * @var Selectable
      */
-    protected $userRepository;
+    protected $users;
 
     /**
      * @var UserServiceInterface
@@ -36,18 +35,17 @@ class UserListController extends AbstractRestfulController
 
     /**
      * @param UserInterface        $userPrototype
-     * @param Selectable           $userRepository
+     * @param Selectable           $users
      * @param UserServiceInterface $userService
      */
     public function __construct(
         UserInterface        $userPrototype,
-        Selectable           $userRepository,
+        Selectable           $users,
         UserServiceInterface $userService
-    )
-    {
-        $this->userPrototype  = $userPrototype;
-        $this->userRepository = $userRepository;
-        $this->userService    = $userService;
+    ) {
+        $this->userPrototype = $userPrototype;
+        $this->users         = $users;
+        $this->userService   = $userService;
     }
 
     /**
@@ -55,7 +53,7 @@ class UserListController extends AbstractRestfulController
      */
     public function get()
     {
-        $users = new Paginator(new SelectableAdapter($this->userRepository));
+        $users = new Paginator(new SelectableAdapter($this->users));
         $users->setCurrentPageNumber((int)$this->params()->fromQuery('page', 1));
 
         return new ResourceViewModel(['users' => $users]);
