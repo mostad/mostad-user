@@ -20,7 +20,7 @@
     "zfr/zfr-rest":                      "~0.4"
   },
   "autoload": {
-    "psr-0": {
+    "psr-4": {
       "Mostad\\User\\": "src/"
     }
   }
